@@ -132,7 +132,7 @@
   </style>
 
 <script type="text/javascript">
-    var pdata=[]; cal = {tcrs: 0, tcr: 0, zcrs: 40, zcr: 130}, sel={}, save={};
+    var pdata=[]; cal = {tcrs: 0, tcr: 0, zcrs: 40, zcr: 130}, sel={}, save={'pdata': []};
     
 
 
@@ -163,7 +163,7 @@
         }
         
 
-        if(save == null){
+        if(Object.entries(save).length == 0){
             save = {};
             save['pdata'] = [];
         }else{
