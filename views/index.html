@@ -160,11 +160,13 @@
 
         if(localStorage.getItem('save') != ""){
             save = $.parseJSON(localStorage.getItem('save'));
+        }else{
+            save = {};
         }
         
 
         if(Object.entries(save).length == 0){
-            save = {};
+
             save['pdata'] = [];
         }else{
             if(Object.keys(save).length > 1){
