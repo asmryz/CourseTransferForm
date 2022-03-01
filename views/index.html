@@ -153,25 +153,31 @@
         //     }
         // });
 
+        //console.log(`SAVE >> ${Object.entries(save).length}`)
+
         $.notify.defaults({ className: "success", autoHideDelay: 2000, position:"top center"});
         // if(localStorage.getItem('save') != null){
         //     doLog();
         // }
 
-        if(localStorage.getItem('save') != ""){
+        // console.log(`SAVE >> ${Object.entries(save).length}`)
+        // console.log(`save : ${save}`)
+
+        //save = $.parseJSON(localStorage.getItem('save'));
+
+        if(localStorage.getItem('save') != ''){
             save = $.parseJSON(localStorage.getItem('save'));
         }else{
-            save = {};
+            save = {'pdata': []}
         }
-        
 
-        if(Object.entries(save).length == 0){
+        if(save == null){
+            save = {'pdata': []}
+        }
 
-            save['pdata'] = [];
-        }else{
-            if(Object.keys(save).length > 1){
-                loadCache();
-            }
+
+        if(Object.keys(save).length > 1){
+            loadCache();
         }
 
         loadAuto();
